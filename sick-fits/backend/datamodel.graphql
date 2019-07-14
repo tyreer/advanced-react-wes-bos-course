@@ -8,50 +8,51 @@ enum Permission {
 }
 
 type User {
-  id: ID! @unique
+  id: ID! @unique @id
   name: String!
   email: String! @unique
   password: String!
   resetToken: String
   resetTokenExpiry: Float
-  permissions: [Permission]
+  permissions: [Permission] @scalarList(strategy: RELATION)
   cart: [CartItem!]!
 }
 
 type Item {
-  id: ID! @unique
+  id: ID! @unique @id
   title: String!
   description: String!
   image: String
   largeImage: String
   price: Int!
   user: User!
+  createdAt: DateTime! @createdAt
 } 
 
 type CartItem {
-  id: ID! @unique
+  id: ID! @unique @id
   quantity: Int! @default(value: 1)
   item: Item #relationship to an item
   user: User! #relationship to a user
 }
 
 type OrderItem {
-  id: ID! @unique
+  id: ID! @unique @id
   title: String!
   description: String!
   image: String
   largeImage: String
   price: Int!
-  quantity: Int! @default(value: "1")
+  quantity: Int! @default(value: 1)
   user: User
 }
 
 type Order {
-  id: ID! @unique
+  id: ID! @unique @id
   items: [OrderItem!]!
   total: Int!
   user: User!
   charge: String!
-  createdAt: DateTime!
-  updatedAt: DateTime!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
