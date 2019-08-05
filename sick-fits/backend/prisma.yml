@@ -1,10 +1,4 @@
-#endpoint: ${env:PRISMA_ENDPOINT}
-#endpoint: https://rob-tyree-sick-fits-a85ea939d2.herokuapp.com
-#endpoint: https://rob-tyree-sick-fits-a85ea939d2.herokuapp.com/rob-sick-fits/prod
-#endpoint: https://rob-tyree-sick-fits-a85ea939d2.herokuapp.com/robs-sick-fits/prod
-#endpoint: https://rob-tyree-sick-fits-a85ea939d2.herokuapp.com/robs-sick-fits/prod
-#endpoint: https://rob-tyree-sick-fits-a85ea939d2.herokuapp.com/robs-sick-fits/prod
-#endpoint: https://rob-tyree-sick-fits-a85ea939d2.herokuapp.com/robs-sick-fits/prod
+# endpoint: ${env:PRISMA_ENDPOINT}
 endpoint: https://rob-tyree-sick-fits-a85ea939d2.herokuapp.com/robs-sick-fits/prod
 datamodel: datamodel.graphql
 # secret: ${env.PRISMA_SECRET}
